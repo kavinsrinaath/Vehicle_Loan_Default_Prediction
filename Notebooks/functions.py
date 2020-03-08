@@ -1,4 +1,5 @@
 import pendulum
+from imblearn.over_sampling import SMOTE
 
 def dateconvert(val,delim):
     a = list(map(int,val.split(delim)))
@@ -31,3 +32,9 @@ def time_diff_months(val):
     s = str(p[0])+'.'+str(p[1])
     s = float(s)
     return s
+
+#Resampling using SMOTE
+def resample(X,y,sampling_strategy):
+    smote = SMOTE(sampling_strategy=sampling_strategy,random_state=27)
+    os_X,os_y = smote.fit_sample(X,y)
+    return os_X,os_y
