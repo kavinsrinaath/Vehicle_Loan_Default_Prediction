@@ -1,5 +1,6 @@
 import pendulum
 from imblearn.over_sampling import SMOTE
+from sklearn.model_selection import GridSearchCV
 
 def dateconvert(val,delim):
     a = list(map(int,val.split(delim)))
@@ -38,3 +39,9 @@ def resample(X,y,sampling_strategy):
     smote = SMOTE(sampling_strategy=sampling_strategy,random_state=27)
     os_X,os_y = smote.fit_sample(X,y)
     return os_X,os_y
+
+def model_perf(model,params,scoring,refit_val,X,y):
+    grid_search = GridSearchCV(estimator=model,param_grid=params,scoring=scoring,return_train_score=True,refit=refit_val,verbose=5,n_jobs=-1)
+    gs_val = grid_search.fit(X,y)
+    return gs_val.best_params_,gs_val.best_score_
+
