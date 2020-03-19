@@ -40,6 +40,7 @@ def resample(X,y,sampling_strategy):
     os_X,os_y = smote.fit_sample(X,y)
     return os_X,os_y
 
+#GridSearch code. Returns best_params_ and best_socre_
 def model_perf(model,params,scoring,refit_val,X,y):
     grid_search = GridSearchCV(estimator=model,param_grid=params,scoring=scoring,return_train_score=True,refit=refit_val,verbose=5,n_jobs=-1)
     gs_val = grid_search.fit(X,y)
