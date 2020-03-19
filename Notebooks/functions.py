@@ -1,6 +1,7 @@
 import pendulum
 from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import GridSearchCV
+import shap
 
 def dateconvert(val,delim):
     a = list(map(int,val.split(delim)))
@@ -46,3 +47,9 @@ def model_perf(model,params,scoring,refit_val,X,y):
     gs_val = grid_search.fit(X,y)
     return gs_val.best_params_,gs_val.best_score_
 
+#SHAP force_plot for tree model.
+def shapTree_plot(model,i,rand_picks):
+    ex_model = shap.TreeExplainer(model)
+    shap_vals = ex_model.shap_values(rand_picks)
+    plot = shap.force_plot(ex_model.expected_value,shap_vals[i],rand_picks.iloc[[i]])
+    return plot
