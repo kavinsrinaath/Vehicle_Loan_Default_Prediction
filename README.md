@@ -25,7 +25,7 @@ We use LTFS&#39;s own data which they used to conduct a competition in 2019.The 
   -  Proofs columns were combined (summed up) to create a new feature called No.of.Proofs.
   -  The dataset faced imbalance class issue  with about 78%- Paid and 22% Default class. To handle it SMOTE from imblearn was used to overcome it.
 
-    ! [Imbalanced Data](/Images/imbalanced_data.png)
+    ! [Imbalanced Data] (/Images/imbalanced_data.png)
 
 -
   -  Using ExtraTressClassifer to obtain feature importance scores it was found that secondary account related features did not have much significance and hence primary and secondary account features were clubbed.
