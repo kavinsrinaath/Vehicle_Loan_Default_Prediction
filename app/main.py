@@ -16,9 +16,9 @@ app = FastAPI()
 
 #loading files
 
-model = pickle.load(open('vc_loan_modelv1.pickle','rb'))
+model = pickle.load(open('https://github.com/kavinsrinaath/Vehicle_Loan_Default_Prediction/blob/master/app/vc_loan_modelv1.pickle','rb'))
 #clf = joblib.load
-features = pickle.load(open('features.pickle','rb'))
+features = pickle.load(open('https://github.com/kavinsrinaath/Vehicle_Loan_Default_Prediction/blob/master/app/features.pickle','rb'))
 
 class Data(BaseModel):
     disbursed_amount : int
