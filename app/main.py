@@ -49,7 +49,20 @@ class Data(BaseModel):
     Total_DisbursedAmount : int
     Total_InstalAmount : int
 
-@app.post("/predict")
+
+
+@app.post("/predict",
+responses={
+        200: {
+            "description": "Successful Response",
+            "content": {
+                "application/json": {
+                    "example": {"prediction": "The loan applicant will pay the 1st EMI"}
+                }
+            },
+        },
+    },
+)
 async def predict(data:Data):
     
     #to extract data in correct order
@@ -64,6 +77,3 @@ async def predict(data:Data):
     else:
         return {"prediction":"The loan applicant will default on 1st EMI payment"}
     #return {"prediction":int(prediction[0])}
-    
-
-    
