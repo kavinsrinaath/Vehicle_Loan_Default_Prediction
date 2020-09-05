@@ -3,9 +3,9 @@ import pickle
 from pydantic import BaseModel
 import numpy as np
 
-import joblib
+#import joblib
 
-from sklearn.ensemble import GradientBoostingClassifier
+#from sklearn.ensemble import GradientBoostingClassifier
 
 #Server
 import uvicorn
