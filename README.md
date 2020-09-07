@@ -87,5 +87,5 @@ We use LTFS&#39;s own data which they used to conduct a competition in 2019.The 
 
 
 -****API details:****
-The API has been deployed as an open API using Heroku. REST resource path : https://vc-loan-v1-beta.herokuapp.com/predict
-API swagger document: https://vc-loan-v1-beta.herokuapp.com/docs
+- The API has been deployed as an open API using Heroku. REST resource path : https://vc-loan-v1-beta.herokuapp.com/predict
+- API swagger document: https://vc-loan-v1-beta.herokuapp.com/docs
