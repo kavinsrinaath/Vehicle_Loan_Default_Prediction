@@ -12,7 +12,11 @@ import uvicorn
 from fastapi import FastAPI
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Vehicle Loan Default Prediction",
+    description="Loan prediction model served as an API",
+    version="0.1.2"
+)
 
 #loading files
 

@@ -1,0 +1,264 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Vehicle Loan Default Prediction",
+    "description": "Loan prediction model served as an API",
+    "version": "0.1.2"
+  },
+  "paths": {
+    "/predict": {
+      "post": {
+        "summary": "Predict",
+        "operationId": "predict_predict_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Data"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {},
+                "example": {
+                  "prediction": "The loan applicant will pay the 1st EMI"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Data": {
+        "title": "Data",
+        "required": [
+          "disbursed_amount",
+          "asset_cost",
+          "ltv",
+          "branch_id",
+          "supplier_id",
+          "manufacturer_id",
+          "Current_pincode_ID",
+          "Employment_Type",
+          "State_ID",
+          "Employee_code_ID",
+          "PERFORM_CNS_SCORE",
+          "PERFORM_CNS_SCORE_DESCRIPTION",
+          "NEW_ACCTS_IN_LAST_SIX_MONTHS",
+          "DELINQUENT_ACCTS_IN_LAST_SIX_MONTHS",
+          "AVERAGE_ACCT_AGE",
+          "CREDIT_HISTORY_LENGTH",
+          "NO_OF_INQUIRIES",
+          "Age",
+          "Age_of_Loan",
+          "No_of_Proofs",
+          "Total_ACCTS",
+          "Total_Active_ACCTS",
+          "Total_Overdue_ACCTS",
+          "Total_CurrentBalance",
+          "Total_SanctionedAmount",
+          "Total_DisbursedAmount",
+          "Total_InstalAmount"
+        ],
+        "type": "object",
+        "properties": {
+          "disbursed_amount": {
+            "title": "Disbursed Amount",
+            "type": "integer"
+          },
+          "asset_cost": {
+            "title": "Asset Cost",
+            "type": "integer"
+          },
+          "ltv": {
+            "title": "Ltv",
+            "type": "number"
+          },
+          "branch_id": {
+            "title": "Branch Id",
+            "type": "integer"
+          },
+          "supplier_id": {
+            "title": "Supplier Id",
+            "type": "integer"
+          },
+          "manufacturer_id": {
+            "title": "Manufacturer Id",
+            "type": "integer"
+          },
+          "Current_pincode_ID": {
+            "title": "Current Pincode Id",
+            "type": "integer"
+          },
+          "Employment_Type": {
+            "title": "Employment Type",
+            "type": "integer"
+          },
+          "State_ID": {
+            "title": "State Id",
+            "type": "integer"
+          },
+          "Employee_code_ID": {
+            "title": "Employee Code Id",
+            "type": "integer"
+          },
+          "PERFORM_CNS_SCORE": {
+            "title": "Perform Cns Score",
+            "type": "integer"
+          },
+          "PERFORM_CNS_SCORE_DESCRIPTION": {
+            "title": "Perform Cns Score Description",
+            "type": "integer"
+          },
+          "NEW_ACCTS_IN_LAST_SIX_MONTHS": {
+            "title": "New Accts In Last Six Months",
+            "type": "integer"
+          },
+          "DELINQUENT_ACCTS_IN_LAST_SIX_MONTHS": {
+            "title": "Delinquent Accts In Last Six Months",
+            "type": "integer"
+          },
+          "AVERAGE_ACCT_AGE": {
+            "title": "Average Acct Age",
+            "type": "number"
+          },
+          "CREDIT_HISTORY_LENGTH": {
+            "title": "Credit History Length",
+            "type": "number"
+          },
+          "NO_OF_INQUIRIES": {
+            "title": "No Of Inquiries",
+            "type": "integer"
+          },
+          "Age": {
+            "title": "Age",
+            "type": "number"
+          },
+          "Age_of_Loan": {
+            "title": "Age Of Loan",
+            "type": "number"
+          },
+          "No_of_Proofs": {
+            "title": "No Of Proofs",
+            "type": "integer"
+          },
+          "Total_ACCTS": {
+            "title": "Total Accts",
+            "type": "integer"
+          },
+          "Total_Active_ACCTS": {
+            "title": "Total Active Accts",
+            "type": "integer"
+          },
+          "Total_Overdue_ACCTS": {
+            "title": "Total Overdue Accts",
+            "type": "integer"
+          },
+          "Total_CurrentBalance": {
+            "title": "Total Currentbalance",
+            "type": "integer"
+          },
+          "Total_SanctionedAmount": {
+            "title": "Total Sanctionedamount",
+            "type": "integer"
+          },
+          "Total_DisbursedAmount": {
+            "title": "Total Disbursedamount",
+            "type": "integer"
+          },
+          "Total_InstalAmount": {
+            "title": "Total Instalamount",
+            "type": "integer"
+          }
+        },
+        "example": {
+          "disbursed_amount": 56032,
+          "asset_cost": 15000,
+          "ltv": 66.3,
+          "branch_id": 68,
+          "supplier_id": 21054,
+          "manufacturer_id": 45,
+          "Current_pincode_ID": 6673,
+          "Employment_Type": 2,
+          "State_ID": 6,
+          "Employee_code_ID": 849,
+          "PERFORM_CNS_SCORE": 660.35,
+          "PERFORM_CNS_SCORE_DESCRIPTION": 1,
+          "NEW_ACCTS_IN_LAST_SIX_MONTHS": 1,
+          "DELINQUENT_ACCTS_IN_LAST_SIX_MONTHS": 1,
+          "AVERAGE_ACCT_AGE": 0.85,
+          "CREDIT_HISTORY_LENGTH": 1.2,
+          "NO_OF_INQUIRIES": 2,
+          "Age": 28.4,
+          "Age_of_Loan": 2.6,
+          "No_of_Proofs": 2,
+          "Total_ACCTS": 4,
+          "Total_Active_ACCTS": 2,
+          "Total_Overdue_ACCTS": 0,
+          "Total_CurrentBalance": 185642,
+          "Total_SanctionedAmount": 45000,
+          "Total_DisbursedAmount": 12000,
+          "Total_InstalAmount": 1300
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
