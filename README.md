@@ -87,5 +87,7 @@ We use LTFS&#39;s own data which they used to conduct a competition in 2019.The 
 
 
 - **API details:**
-  - The API has been deployed as an open API using Heroku. REST resource path : https://vc-loan-v1-beta.herokuapp.com/predict
-  - API swagger document: https://vc-loan-v1-beta.herokuapp.com/docs
+  - The API has been containerized using Docker. Using that it has been deployed on RedHat's PaaS product OpenShift. 
+  - REST resource path : http://vcloanapp-modelone.apps.us-west-1.starter.openshift-online.com/predict
+  - API swagger document: http://vcloanapp-modelone.apps.us-west-1.starter.openshift-online.com/docs or http://vcloanapp-modelone.apps.us-west-1.starter.openshift-online.com/redoc
+  - The sample json request body from the swagger can be used for tryout or alternatively tools such as SOAP UI or Postman can also be used to consume the API.
