@@ -4,8 +4,8 @@ WORKDIR /dockerfile
 COPY requirements.txt /dockerfile
 RUN pip install -r requirements.txt 
 
-EXPOSE 1225
+
 
 COPY . /dockerfile
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "1225"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]
