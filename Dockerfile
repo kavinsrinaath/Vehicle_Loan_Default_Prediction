@@ -8,4 +8,4 @@ EXPOSE 1225
 
 COPY . /dockerfile
 EXPOSE $PORT
-CMD ["uvicorn", "app.main:app"]
+CMD ["uvicorn", "app.main:app","--port", "1225"]
